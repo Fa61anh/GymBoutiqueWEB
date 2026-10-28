@@ -1,0 +1,45 @@
+{
+  "membresias": [
+    {
+      "id": 1,
+      "nombre": "Básico",
+      "precio": 19990,
+      "duracionMeses": 1,
+      "beneficios": [
+        "Acceso a sala de musculación",
+        "Camarines"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Plus",
+      "precio": 29990,
+      "duracionMeses": 3,
+      "beneficios": [
+        "Sala de musculación",
+        "Clases grupales",
+        "Camarines"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Premium",
+      "precio": 49990,
+      "duracionMeses": 6,
+      "beneficios": [
+        "Acceso total 24/7",
+        "Clases grupales",
+        "Evaluación física",
+        "Camarines"
+      ]
+    }
+  ],
+  "alumnos": [
+    {
+      "nombre": "Alex mocoso",
+      "correo": "Alex@gmail.com",
+      "membresiaId": 1,
+      "id": 1
+    }
+  ]
+}

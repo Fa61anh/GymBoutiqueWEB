@@ -1,0 +1,95 @@
+/* ==========================================
+   ESTILOS PERSONALIZADOS - IRONSTRONG FITNESS
+   ========================================== */
+
+/* Fondo general de la aplicación de estilo noche oscura */
+body {
+  background-color: #0d1117; /* Negro azulado profundo */
+  color: #f0f6fc; /* Texto blanquecino para evitar fatiga visual */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ajustes de títulos para que resalten */
+h1, h2, h3, h4, .h1, .h2, .h3 {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
+}
+
+/* Tarjetas de Membresía Estilo Cyberpunk/Gym */
+.card {
+  background-color: #161b22; /* Fondo de tarjeta gris/azul muy oscuro */
+  border: 2px solid #21262d; /* Borde sutil inicial */
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover: Cuando el usuario pasa el mouse, brilla en azul eléctrico */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #0052ff; /* Azul eléctrico */
+  box-shadow: 0 8px 25px rgba(0, 82, 255, 0.4);
+}
+
+/* Iconos de check de la lista */
+.card-body ul li {
+  color: #c9d1d9;
+}
+
+/* Forzar que los textos internos de la tarjeta mantengan contraste */
+.card-title {
+  color: #00d2ff !important; /* Un tono celeste cian brillante para el nombre del plan */
+}
+
+/* Botones de acción "Elegir Plan" */
+.card .btn-dark, .btn-custom-neon {
+  background: linear-gradient(135deg, #0052ff 0%, #00d2ff 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.card .btn-dark:hover {
+  background: linear-gradient(135deg, #003bc7 0%, #00a4cc 100%);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+/* Formulario de Registro Estilo Dark */
+.form-label {
+  color: #00d2ff; /* Etiquetas de los campos en azul brillante */
+  font-weight: 500;
+}
+
+.form-control {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  color: #f0f6fc;
+}
+
+.form-control:focus {
+  background-color: #161b22;
+  color: #ffffff;
+  border-color: #0052ff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 82, 255, 0.25);
+}
+/* Hacer que los precios resalten en color blanco brillante o amarillo/verde neón */
+.card h2, 
+.card .display-6,
+.card [class*="precio"] {
+  color: #ffffff !important; /* Blanco puro para máximo contraste */
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Cambiar el texto gris oscuro de la duración por un gris claro/plateado legible */
+.card p, 
+.card .text-muted,
+.card [class*="duracion"] {
+  color: #a0aec0 !important; /* Gris claro que se lee perfectamente sobre fondo oscuro */
+  font-size: 0.95rem;
+}
