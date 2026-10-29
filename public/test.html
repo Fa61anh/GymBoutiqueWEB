@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pruebas Unitarias del Carrito - QUnit</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+  <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+
+  <script>
+    const agregarAlCarrito = (carrito, producto) => {
+      const existe = carrito.find((item) => item.id === producto.id);
+      if (existe) {
+        return carrito.map((item) =>
+          item.id === producto.id ? { ...item, cantidad: item.cantidad + 1 } : item
+        );
+      }
+      return [...carrito, { ...producto, cantidad: 1 }];
+    };
+
+    const eliminarDelCarrito = (carrito, productoId) => {
+      return carrito.filter((item) => item.id !== productoId);
+    };
+
+    const calcularTotal = (carrito) => {
+      return carrito.reduce((total, item) => total + item.price * item.cantidad, 0);
+    };
+
+    QUnit.module("Pruebas Unitarias para el Carrito (useCarrito)", () => {
+
+      QUnit.test("Debe agregar un producto nuevo al carrito con cantidad 1", (assert) => {
+        const carritoInicial = [];
+        const producto = { id: "1", name: "Proteína Whey", price: 32990 };
+
+        const resultado = agregarAlCarrito(carritoInicial, producto);
+
+        assert.equal(resultado.length, 1, "El carrito debe contener 1 elemento");
+        assert.equal(resultado[0].cantidad, 1, "La cantidad inicial del producto debe ser 1");
+        assert.equal(resultado[0].name, "Proteína Whey", "El nombre del producto debe coincidir");
+      });
+
+      QUnit.test("Debe incrementar la cantidad si el producto ya existe en el carrito", (assert) => {
+        const carritoInicial = [{ id: "1", name: "Proteína Whey", price: 32990, cantidad: 1 }];
+        const producto = { id: "1", name: "Proteína Whey", price: 32990 };
+
+        const resultado = agregarAlCarrito(carritoInicial, producto);
+
+        assert.equal(resultado.length, 1, "El número de productos únicos no debe aumentar");
+        assert.equal(resultado[0].cantidad, 2, "La cantidad del producto debe haber aumentado a 2");
+      });
+
+      QUnit.test("Debe eliminar un producto correctamente del carrito", (assert) => {
+        const carritoInicial = [
+          { id: "1", name: "Proteína Whey", price: 32990, cantidad: 1 },
+          { id: "2", name: "Botella Térmica", price: 27990, cantidad: 1 }
+        ];
+
+        const resultado = eliminarDelCarrito(carritoInicial, "1");
+
+        assert.equal(resultado.length, 1, "Debe quedar 1 solo producto en el carrito");
+        assert.equal(resultado[0].id, "2", "El producto restante debe ser la Botella Térmica");
+      });
+
+      QUnit.test("Debe calcular correctamente el total a pagar", (assert) => {
+        const carrito = [
+          { id: "1", name: "Proteína Whey", price: 32990, cantidad: 2 },
+          { id: "2", name: "Botella Térmica", price: 27990, cantidad: 1 }
+        ];
+
+        const total = calcularTotal(carrito);
+
+        assert.equal(total, 93970, "El total acumulado debe ser $93.970");
+      });
+
+    });
+  </script>
+</body>
+</html>

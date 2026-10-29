@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": "proteina",
+      "name": "Proteína Whey",
+      "price": "32990",
+      "description": "Nuestra Proteína Whey es la elección ideal para aquellos que buscan una fuente de proteína de alta calidad para optimizar su recuperación muscular después del entrenamiento.",
+      "image": "/img/proteina.jpg"
+    },
+
+    {
+      "id": "botella",
+      "name": "Botella Térmica",
+      "price": "27990",
+      "description": "Nuestra Botella Térmica es la elección ideal para mantener tu bebida a la temperatura perfecta durante todo el día.",
+      "image": "/img/botella.jpg"
+    },
+
+    {
+      "id": "cinturon",
+      "name": "Cinturón de Entrenamiento",
+      "price": "23990",
+      "description": "Nuestro Cinturón de Entrenamiento es la elección ideal para brindar soporte lumbar y estabilidad durante tus levantamientos pesados.",
+      "image": "/img/cinturon.jpg"
+    },
+    
+    {
+      "id": "straps",
+      "name": "Straps de Entrenamiento",
+      "price": "22990",
+      "description": "Nuestros Straps de Entrenamiento son la elección ideal para mejorar tu agarre y rendimiento en el gimnasio.",
+      "image": "/img/straps.jpg"
+    }
+  ],
+
+  "usuarios": []
+}
